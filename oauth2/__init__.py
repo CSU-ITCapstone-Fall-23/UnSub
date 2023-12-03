@@ -1,40 +1,36 @@
-# Copyright 2016 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+"""
+oauthlib.oauth2
+~~~~~~~~~~~~~~
 
-"""Google OAuth 2.0 Library for Python."""
-
-import sys
-import warnings
-
-
-class Python37DeprecationWarning(DeprecationWarning):  # pragma: NO COVER
-    """
-    Deprecation warning raised when Python 3.7 runtime is detected.
-    Python 3.7 support will be dropped after January 1, 2024. See
-    https://cloud.google.com/python/docs/python37-sunset/ for more information.
-    """
-
-    pass
-
-
-# Checks if the current runtime is Python 3.7.
-if sys.version_info.major == 3 and sys.version_info.minor == 7:  # pragma: NO COVER
-    message = (
-        "After January 1, 2024, new releases of this library will drop support "
-        "for Python 3.7. More details about Python 3.7 support "
-        "can be found at https://cloud.google.com/python/docs/python37-sunset/"
-    )
-    # Configure the Python37DeprecationWarning warning so that it is only emitted once.
-    warnings.simplefilter("once", Python37DeprecationWarning)
-    warnings.warn(message, Python37DeprecationWarning)
+This module is a wrapper for the most recent implementation of OAuth 2.0 Client
+and Server classes.
+"""
+from .rfc6749.clients import (
+    BackendApplicationClient, Client, LegacyApplicationClient,
+    MobileApplicationClient, ServiceApplicationClient, WebApplicationClient,
+)
+from .rfc6749.endpoints import (
+    AuthorizationEndpoint, BackendApplicationServer, IntrospectEndpoint,
+    LegacyApplicationServer, MetadataEndpoint, MobileApplicationServer,
+    ResourceEndpoint, RevocationEndpoint, Server, TokenEndpoint,
+    WebApplicationServer,
+)
+from .rfc6749.errors import (
+    AccessDeniedError, FatalClientError, InsecureTransportError,
+    InvalidClientError, InvalidClientIdError, InvalidGrantError,
+    InvalidRedirectURIError, InvalidRequestError, InvalidRequestFatalError,
+    InvalidScopeError, MismatchingRedirectURIError, MismatchingStateError,
+    MissingClientIdError, MissingCodeError, MissingRedirectURIError,
+    MissingResponseTypeError, MissingTokenError, MissingTokenTypeError,
+    OAuth2Error, ServerError, TemporarilyUnavailableError, TokenExpiredError,
+    UnauthorizedClientError, UnsupportedGrantTypeError,
+    UnsupportedResponseTypeError, UnsupportedTokenTypeError,
+)
+from .rfc6749.grant_types import (
+    AuthorizationCodeGrant, ClientCredentialsGrant, ImplicitGrant,
+    RefreshTokenGrant, ResourceOwnerPasswordCredentialsGrant,
+)
+from .rfc6749.request_validator import RequestValidator
+from .rfc6749.tokens import BearerToken, OAuth2Token
+from .rfc6749.utils import is_secure_transport
+from .rfc8628.clients import DeviceClient
