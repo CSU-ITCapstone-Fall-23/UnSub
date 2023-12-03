@@ -1,5 +1,1 @@
-pip install flask
-
-pip install Authlib Flask
-
-pip install requests
+flask, Authlib Flask, requests
