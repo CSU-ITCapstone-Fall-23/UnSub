@@ -1,1 +1,3 @@
-flask, Authlib Flask, requests
+flask==3.0.0
+Authlib Flask==1.2.1
+requests==1.0.0
