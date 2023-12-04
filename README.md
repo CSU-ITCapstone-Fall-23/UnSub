@@ -3,18 +3,16 @@ Uses YouTube APIs to allow users to search for the top 9 videos for their search
 
 ## Install Packages
 
-pip install flask
-
+<code>pip install flask
 pip install python-dotenv
-
 pip install requests
-
 pip install isodate
+pip install Authlib Flask</code>
 
-pip install Authlib Flask
+## Create Virtual Environment
+
+<code>pipenv shell</code>
 
 ## Run Application
 
-pipenv shell
-
-flask run
+<code>flask run</code>
