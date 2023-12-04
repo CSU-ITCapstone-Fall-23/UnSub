@@ -1,7 +1,5 @@
-# UnSub
-Uses YouTube APIs to allows users to view and manage their YouTube subscriptions.
-
----------------------------------------------------------------------------------
+# Youtube Searcher
+Uses YouTube APIs to allow users to search for the top 9 videos for their search.
 
 ## Install Packages
 
