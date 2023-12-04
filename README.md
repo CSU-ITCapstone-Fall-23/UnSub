@@ -5,7 +5,7 @@ Uses YouTube APIs to allows users to view and manage their YouTube subscriptions
 
 To run in gitpod:
 
-pip install flask&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# installs flask
+pip install flask&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;# installs flask
 
 pip install python-dotenv&emsp;&emsp;&emsp;#necessary for flask to run routes.py
 
